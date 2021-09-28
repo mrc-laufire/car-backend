@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     make: DataTypes.STRING,
     model: DataTypes.STRING,
     vehicleNumber: DataTypes.STRING,
-    purchaseDate: DataTypes.DATE
+    purchaseDate: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'cars',

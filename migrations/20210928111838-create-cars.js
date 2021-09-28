@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       purchaseDate: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
