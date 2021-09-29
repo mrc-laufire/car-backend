@@ -15,7 +15,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       vehicleNumber: {
-        unique: true,
         type: Sequelize.STRING
       },
       purchaseDate: {

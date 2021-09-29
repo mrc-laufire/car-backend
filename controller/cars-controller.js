@@ -3,14 +3,7 @@ const {Op} = sequelize;
 const cars = require("../models").cars;
 
 exports.create = async(req, res) => {
-        const temp = await cars.findOne({
-            where: {
-                vehicleNumber: {
-                    [Op.eq]:req.body.vehicleNumber
-                }
-            }
-        });
-        const result = temp ? "Duplicate value" : await cars.create({
+        const result = await cars.create({
             ...req.body,
         });
         res.json(result);
@@ -24,8 +17,8 @@ exports.list = async(req, res) => {
 exports.delete = async(req, res) => {
     const result = await cars.destroy({
         where: {
-            vehicleNumber: {
-                [Op.eq]:req.params.vehicleNumber
+            id: {
+                [Op.eq]:req.params.id
             }
         }
     });
@@ -38,8 +31,8 @@ exports.update = async(req, res) => {
     },
     {
         where: {
-            vehicleNumber: {
-                [Op.eq]:req.params.vehicleNumber
+            id: {
+                [Op.eq]:req.params.id
             }
         }
     });
