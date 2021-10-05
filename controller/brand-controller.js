@@ -11,7 +11,8 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
     const result = await brands.findAll({});
-    res.json(result);
+    const table = result.map(({make, model}) => ({make, model}));
+    res.json(table);
 }
 
 exports.get = async(req, res) => {
